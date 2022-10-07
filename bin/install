@@ -20,7 +20,6 @@ install_tctl() {
         if [ -L "$bin_path" ]; then
             unlink "$bin_path"
         fi
-        echo ln -s "${ASDF_TCTL_DEV_PATH}" "$bin_path"
         ln -s "${ASDF_TCTL_DEV_PATH}" "$bin_path"
     else
         local download_url="$(get_download_url $version)"

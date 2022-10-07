@@ -31,3 +31,11 @@ Downloading tctl from https://binaries.dl.tetrate.io/public/raw/versions/darwin-
 $ ASDF_TCTL_OVERWRITE_ARCH=arm64 asdf install tctl 1.5.2
 Downloading tctl from https://binaries.dl.tetrate.io/public/raw/versions/darwin-arm64-1.5.2/tctl
 ```
+
+### Development version
+
+If you have a custom build of `tctl` locally you can install a `dev` version targetting it (it will be linked to `asdf`'s bin folder). You need to specify the path to your custom binary using `ASDF_TCTL_DEV_PATH` env var.
+
+```
+$ ASDF_TCTL_DEV_PATH=/path/to/some/debug/bin/tctl asdf install tctl dev
+```
