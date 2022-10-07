@@ -3,6 +3,7 @@
 set -euo pipefail
 
 MYDIR="$(dirname "$(realpath "$0")")"
-source ${MYDIR}/list-all-funcs
+# shellcheck disable=SC1091
+source "${MYDIR}/list-all-funcs"
 
 list_all_versions | sort_versions | xargs echo dev
