@@ -1,6 +1,8 @@
 # asdf-tctl
 
-tctl plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
+Shamelessly copied from [asdf-kubectl](https://github.com/asdf-community/asdf-kubectl).
+
+tctl plugin for [asdf](https://github.com/asdf-vm/asdf) version manager.
 
 ## Install
 
