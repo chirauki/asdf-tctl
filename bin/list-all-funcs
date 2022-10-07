@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# stolen from https://github.com/rbenv/ruby-build/pull/631/files#diff-fdcfb8a18714b33b07529b7d02b54f1dR942
+function sort_versions() {
+  sed 'h; s/[+-]/./g; s/.p\([[:digit:]]\)/.z\1/; s/$/.z/; G; s/\n/ /' | \
+    LC_ALL=C sort -t. -k 1,1 -k 2,2n -k 3,3n -k 4,4n -k 5,5n | awk '{print $2}'
+}
+
+list_all_versions() {
+    curl -sk https://binaries.dl.tetrate.io/public/raw/ | \
+    grep -io '<a href=['"'"'"][^"'"'"']*['"'"'"]' | \
+    sed -e 's/^<a href=["'"'"']//i' -e 's/["'"'"']$//i' | \
+    grep -v ".asc" | \
+    grep linux-amd64 | \
+    cut -d'/' -f7 | \
+    sed "s/linux-amd64-//g" | \
+    egrep "[0-9]\.[0-9]\.[0-9]"
+}
