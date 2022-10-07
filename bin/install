@@ -16,6 +16,7 @@ install_tctl() {
 
     if [ "$version" == "dev" ]; then
         [ -n "$ASDF_TCTL_DEV_PATH" ] ||  (>&2 echo 'Missing ASDF_TCTL_DEV_PATH' && exit 1)
+        mkdir -p "$bin_install_path"
         if [ -L "$bin_path" ]; then
             unlink "$bin_path"
         fi
