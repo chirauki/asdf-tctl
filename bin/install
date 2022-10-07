@@ -15,7 +15,10 @@ install_tctl() {
     local bin_path="${bin_install_path}/tctl"
 
     if [ "$version" == "dev" ]; then
-        test -l "$bin_path" || ln -s "${ASDF_TCTL_DEV_PATH}" "$bin_path"
+        if [ -L "$bin_path" ]; then
+            unlink "$bin_path"
+        fi
+        ln -s "${ASDF_TCTL_DEV_PATH}" "$bin_path"
     else
         local download_url="$(get_download_url $version)"
 
