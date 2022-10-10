@@ -25,7 +25,7 @@ jobs:
       - name: Test plugin
         uses: asdf-vm/actions/plugin-test@v1
         with:
-          command: my_tool --version
+          command: tctl version
 
   lint:
     runs-on: ubuntu-latest
