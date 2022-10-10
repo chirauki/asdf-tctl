@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-MYDIR="$(dirname "$(realpath "$0")")"
+MYDIR="$(dirname "$0")"
 # shellcheck disable=SC1091,SC1090
 source "${MYDIR}/list-all-funcs"
 
