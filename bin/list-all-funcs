@@ -14,5 +14,5 @@ list_all_versions() {
 		grep linux-amd64 |
 		cut -d'/' -f7 |
 		sed "s/linux-amd64-//g" |
-		grep -E "[0-9]\.[0-9]\.[0-9]"
+		grep -E "^[0-9]*\.[0-9]*\.[0-9]*$"
 }
